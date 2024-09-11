@@ -1,0 +1,13 @@
+
+.footerBox{
+border: 3px solid; 
+color:grey;
+
+}
+
+.footerT{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: brown;
+
+}

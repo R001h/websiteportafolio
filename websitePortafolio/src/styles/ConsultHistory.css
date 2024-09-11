@@ -1,0 +1,24 @@
+.ConsultHistory_Box {
+
+    background-color: cadetblue;
+    width: 700px;
+    height: auto;
+    margin-bottom: 25px;
+    padding-bottom: 30px;
+    
+}
+
+.btnedit{
+    
+    height:38px;
+    border: 1px solid; 
+    color:#0b0b0b;
+}
+
+.btndel{
+    
+    height:38px;
+    border: 1px solid; 
+    color:#0b0b0b;
+}
+
