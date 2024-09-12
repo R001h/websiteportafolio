@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "email": "mario@me.com",
+      "username": "marioruis",
+      "psw": "password123",
+      "id": "f8e2"
+    },
+    {
+      "email": "paco@me.com",
+      "username": "paco",
+      "psw": "pass",
+      "id": "7b44"
+    },
+    {
+      "email": "aldo@me.com",
+      "username": "aldo",
+      "psw": "aa",
+      "id": "5b48"
+    },
+    {
+      "id": "852b",
+      "username": "marioruis",
+      "email": "aldouu@me.com",
+      "psw": "password123",
+      "cedula": "1234567"
+    },
+    {
+      "id": "2b40",
+      "username": "luisajaja",
+      "email": "me@papa.com",
+      "psw": "password",
+      "cedula": "2324234"
+    }
+  ],
+  "task": [
+    {
+      "id": "3bf0",
+      "task": "tarea ",
+      "tareaDetails": "prueba 001"
+    },
+    {
+      "task": "bb",
+      "tareaDetails": "guerra",
+      "id": "74e3"
+    },
+    {
+      "id": "54a9",
+      "task": "papaya",
+      "tareaDetails": "papayita"
+    },
+    {
+      "id": "348d",
+      "task": "tarea ",
+      "tareaDetails": "prueba 001"
+    }
+  ]
+}

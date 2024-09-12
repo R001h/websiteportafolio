@@ -1,14 +1,16 @@
 import React from 'react';
 import '../styles/Header.css'
+import NavBar from './Navbar';
 
 
 function Header() {
 
   return (
     <>
-      <div>
+      <div className='Container_Header'>
     
-        
+      <NavBar />
+
       </div>
     </>
   )
