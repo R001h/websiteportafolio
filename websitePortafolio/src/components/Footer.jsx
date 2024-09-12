@@ -1,17 +1,17 @@
 import React from 'react';
-import '../styles/Footer.css'
+import '../styles/Footer.css';
 
-
-function Footer() {
+const Footer = () => {
+  // Get the current year
+  const currentYear = new Date().getFullYear();
 
   return (
-    <>
-      <div className='footerBox'>
-      <h2 className='footerT'>Footer</h2>
-        
-      </div>
-    </>
-  )
-}
+    <footer className="footer">
+      <p className='copyright'>
+      {currentYear} &copy;<a href="https://fixbitscr.com/" target="_blank" rel="noopener noreferrer">FixBitsCR</a>-  All rights reserved -
+      </p>
+    </footer>
+  );
+};
 
 export default Footer;
