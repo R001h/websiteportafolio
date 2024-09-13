@@ -6,11 +6,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <div>
     <footer className="footer">
-      <p className='copyright'>
-      {currentYear} &copy;<a href="https://fixbitscr.com/" target="_blank" rel="noopener noreferrer">FixBitsCR</a>-  All rights reserved -
+    <p className='copyright'>
+      {currentYear} &copy;<a href="https://fixbitscr.com/" target="_blank" rel="noopener noreferrer">Fixbitscr</a>-  All rights reserved -
       </p>
-    </footer>
+</footer>  
+      
+      </div>
   );
 };
 

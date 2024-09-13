@@ -1,15 +1,23 @@
 
-.navbar {
+.th{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 25px;
-  padding: 8px 0;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 9999;
-  transition:  0.32s ease-in-out;
+  justify-content: center;
+}
+ 
+.navbarx {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  position: fixed;
+  width: 100%;
+  top: 0;
   justify-content: center;
 
 }
