@@ -1,21 +1,16 @@
 .footer {
-
-    border: 3px solid;color:rgb(0, 0, 0);
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 8px 0;
-    position: fixed;
-    width: 100%;
-    z-index: 9999;
+   
+    
 }
 
 .copyright{
     
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    align-content: center;
     color:blue;
   
 }

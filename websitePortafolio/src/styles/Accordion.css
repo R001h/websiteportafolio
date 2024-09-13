@@ -1,0 +1,8 @@
+.Accordion {
+
+    display: grid;
+    grid-template-columns: auto;
+    position: fixed;
+    justify-content: center;
+    width: 600px;
+}

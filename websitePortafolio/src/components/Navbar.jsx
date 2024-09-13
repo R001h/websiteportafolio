@@ -4,14 +4,18 @@ import { Link } from "react-router-dom";
 import '../styles/Navbar.css'; 
 
 function Navbar() {
+
+
+
+
   return (
-  <div>
+  <div className="NavbarM">
   <div>
     <div className="th"> <h2>FIXBITSCR  </h2></div>
   <div/>
-    <div><nav>
+    <div ><nav>
       <br /> 
-        <ul className="navbarx">
+        <ul className="navbary">
           <br />
           <Link to="/services" className="nav-link">Services</Link>
           <Link to="/aboutus" className="nav-link">About Us</Link>

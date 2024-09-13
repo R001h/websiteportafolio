@@ -2,7 +2,8 @@ import React from 'react';
 import '../styles/Home.css'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import AccordionHome from '../components/Accordion';
+import LoginForm from '../components/LoginForm'
+
 
 
 
@@ -10,13 +11,13 @@ function Home() {
 
   return (
     <>
-      <div className='divbox' >
+      <div >
       <Header />
-      
+      <br />
+      </div>
+      <br />
+      <br />
       <Footer />
-       
-       
-       </div>
     </>
   )
 }

@@ -8,12 +8,12 @@ const Footer = () => {
   return (
     <div>
     <footer className="footer">
-    <p className='copyright'>
-      {currentYear} &copy;<a href="https://fixbitscr.com/" target="_blank" rel="noopener noreferrer">Fixbitscr</a>-  All rights reserved -
+    <p className='copyright'><a href="https://fixbitscr.com/" target="_blank" rel="noopener noreferrer">Fixbitscr -<p>  </p> </a> 
+    {currentYear} - &copy; All rights reserved
       </p>
-</footer>  
+    </footer>  
       
-      </div>
+    </div>
   );
 };
 

@@ -8,6 +8,7 @@ import Contact from '../pages/Contact';
 import Network from '../pages/Network';
 import EnterpriseMail from '../pages/EnterpriseMail';
 import DataBase from '../pages/DataBase';
+import Probar from '../pages/Probar';
 
 const Routing = () => {
   return (
@@ -17,6 +18,7 @@ const Routing = () => {
        <Route path="/Login" element={<Login />} />
        <Route path="/Register" element={<Register />} />
        <Route path="/Contact" element={<Contact />} />
+       <Route path="/Probar" element={<Probar />} />
        <Route path="/Network" element={<Network />} />
        <Route path="/DataBase" element={<DataBase />} />
        <Route path="/EnterPriseMail" element={<EnterpriseMail/>} />
