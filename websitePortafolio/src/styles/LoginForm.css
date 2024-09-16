@@ -1,9 +1,189 @@
-.LoginBox{
-
-    background-color: cadetblue;
-    width: 700px;
-    height: auto;
-    margin-bottom: 25px;
-    padding-bottom: 30px;
-
-}
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+    background: linear-gradient(135deg, #003566, #212529); /* Fondo de página en un gradiente de azul oscuro a negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+  }
+  
+  /* Estilo del contenedor del formulario de inicio de sesión */
+  .LoginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Reducido para un contenedor más compacto */
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido para el formulario */
+    border-radius: 15px; /* Radio de borde ajustado */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Sombra intensa para el efecto flotante */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    animation: fadeIn 1s ease-in-out, glow 2s infinite alternate; /* Animaciones combinadas */
+    max-width: 320px; /* Tamaño máximo ajustado para un formulario más pequeño */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Animación de resplandor */
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 15px rgba(141, 169, 196, 0.6); /* Azul claro para el resplandor */
+    }
+    to {
+      box-shadow: 0 0 30px rgba(141, 169, 196, 1); /* Azul claro más intenso */
+    }
+  }
+  
+  /* Estilo general del formulario */
+  .box_login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Espaciado reducido */
+    width: 100%;
+  }
+  
+  /* Estilo de los campos de entrada */
+  input {
+    padding: 10px; /* Relleno ajustado */
+    border: 2px solid #003566; /* Azul oscuro para el borde */
+    border-radius: 10px; /* Radio de borde ajustado */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    background-color: #406c99; /* Fondo oscuro para el input */
+    color: #ced4da; /* Texto gris claro en el input */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 0 10px rgba(141, 169, 196, 0.5); /* Sombra azul claro suave */
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #8da9c4; /* Azul claro al enfocar */
+    box-shadow: 0 0 20px rgba(141, 169, 196, 0.8); /* Efecto de sombra azul claro al enfocar */
+    background-color: #343a40; /* Fondo más oscuro al enfocar */
+    animation: pulse 1s infinite; /* Animación de pulso */
+  }
+  
+  /* Animación de pulso para el enfoque */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Estilo del botón de inicio de sesión */
+  button {
+    padding: 12px 24px; /* Ajustado para un tamaño más compacto */
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transiciones suaves */
+    background: linear-gradient(135deg, #003566, #13315c); /* Gradiente en tonos de azul oscuro */
+    color: #ced4da; /* Texto gris claro */
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    
+  }
+  
+  /* Botón de inicio de sesión */
+  .btnLogin {
+    background: linear-gradient(135deg, #4da4f7, #94accf); /* Gradiente en tonos de azul oscuro */
+  }
+  
+  .btnLogin:hover {
+    background: linear-gradient(135deg, #002f5b, #102d44); /* Gradiente en tonos de azul más oscuro */
+    transform: scale(1.05); /* Efecto de escala en hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra en hover */
+  }
+  
+  /* Efecto de partículas en el botón */
+  .btnLogin::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+    pointer-events: none;
+  }
+  
+  .btnLogin:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  /* Contenedor de botones adicionales */
+  .containerButtons {
+    margin-top: 20px;
+  }
+  
+  /* Botón de registro */
+  .btnSignUp {
+    background: linear-gradient(135deg, #8da9c4, #ced4da); /* Gradiente en tonos de azul claro a gris claro */
+    color: #003566; /* Texto azul oscuro */
+    border: 2px solid #003566; /* Borde azul oscuro */
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 15px; /* Ajustado para tamaño compacto */
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease; /* Transiciones suaves */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Estilo del enlace dentro del botón de registro */
+  .btnSignUp a {
+    color: inherit; /* Hereda el color del botón */
+    text-decoration: none;
+  }
+  
+  .btnSignUp:hover {
+    background: linear-gradient(135deg, #ced4da, #8da9c4); /* Gradiente en tonos de gris claro a azul claro en hover */
+    border-color: #002f5b; /* Borde azul oscuro más pronunciado en hover */
+    text-decoration: underline; /* Subrayado al pasar el cursor sobre el texto */
+  }
+  
+  /* Efecto de partículas en el botón de registro */
+  .btnSignUp::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+    pointer-events: none;
+  }
+  
+  .btnSignUp:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  

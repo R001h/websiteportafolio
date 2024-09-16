@@ -1,0 +1,139 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
+    background: linear-gradient(135deg, #003566, #212529); /* Fondo de página en un gradiente de azul oscuro a negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+  }
+  
+  /* Estilo del contenedor del formulario de registro */
+  .LoginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Reducido para un contenedor más compacto */
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido para el formulario */
+    border-radius: 15px; /* Radio de borde ajustado */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* Sombra intensa para el efecto flotante */
+    backdrop-filter: blur(12px); /* Efecto de desenfoque de fondo aumentado */
+    animation: fadeIn 1s ease-in-out, glow 2s infinite alternate; /* Animaciones combinadas */
+    max-width: 280px; /* Tamaño máximo ajustado para un formulario más pequeño */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Animación de resplandor */
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 15px rgba(141, 169, 196, 0.6); /* Azul claro para el resplandor */
+    }
+    to {
+      box-shadow: 0 0 30px rgba(141, 169, 196, 1); /* Azul claro más intenso */
+    }
+  }
+  
+  /* Estilo general del formulario */
+  .box_login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado reducido */
+    width: 100%;
+  }
+  
+  /* Estilo de los campos de entrada */
+  input {
+    padding: 12px; /* Relleno ajustado */
+    border: 2px solid #003566; /* Azul oscuro para el borde */
+    border-radius: 10px; /* Radio de borde ajustado */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    background-color: #212529; /* Fondo oscuro para el input */
+    color: #ced4da; /* Texto gris claro en el input */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 0 10px rgba(141, 169, 196, 0.5); /* Sombra azul claro suave */
+  }
+  
+  /* Estilo del enfoque del campo de entrada */
+  input:focus {
+    outline: none;
+    border-color: #8da9c4; /* Azul claro al enfocar */
+    box-shadow: 0 0 20px rgba(141, 169, 196, 0.8); /* Efecto de sombra azul claro al enfocar */
+    background-color: #343a40; /* Fondo más oscuro al enfocar */
+    animation: pulse 1s infinite; /* Animación de pulso */
+  }
+  
+  /* Animación de pulso para el enfoque */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Estilo del botón de registro */
+  button {
+    padding: 12px 24px; /* Ajustado para un tamaño más compacto */
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transiciones suaves */
+    background: linear-gradient(135deg, #8da9c4, #003566); /* Gradiente en tonos de azul claro a oscuro */
+    color: #ced4da; /* Texto gris claro */
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Botón de registro */
+  .btnSignUp {
+    background: linear-gradient(135deg, #003566, #8da9c4); /* Gradiente en tonos de azul oscuro */
+  }
+  
+  .btnSignUp:hover {
+    background: linear-gradient(135deg, #002f5b, #102d44); /* Gradiente en tonos de azul más oscuro */
+    transform: scale(1.05); /* Efecto de escala en hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Sombra en hover */
+  }
+  
+  /* Efecto de partículas en el botón */
+  .btnSignUp::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+    pointer-events: none;
+  }
+  
+  .btnSignUp:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  

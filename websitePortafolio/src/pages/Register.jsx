@@ -12,7 +12,6 @@ function Register() {
   return (
     <>
       <div className='LoginBox' >
-      <Header />
       <RegisterForm />
       <Footer />
       </div>

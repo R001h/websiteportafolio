@@ -1,0 +1,73 @@
+/* Contenedor de servicios */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center; /* Centra las tarjetas horizontalmente en el contenedor */
+  }
+  
+  /* Estilo base de la tarjeta de servicio */
+  .service-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Ancho fijo aumentado al doble del tamaño anterior */
+    max-width: 100%; /* Asegura que las tarjetas no excedan el contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  }
+  
+  /* Efecto de hover sobre la tarjeta */
+  .service-card:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta hacia arriba */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2); /* Mayor sombra para destacar */
+  }
+  
+  /* Título del servicio */
+  .service-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333; /* Color del título */
+  }
+  
+  /* Descripción del servicio */
+  .service-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555; /* Color de la descripción */
+  }
+  
+  /* Lista de ítems del servicio */
+  .service-items {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 0; /* Eliminar margen inferior */
+  }
+  
+  /* Animación de entrada para las tarjetas */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .service-card {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  /* Estilo para dispositivos móviles */
+  @media (max-width: 768px) {
+    .service-card {
+      width: 90%; /* Ancho reducido en dispositivos móviles para adaptarse mejor */
+      margin: 10px auto; /* Centra la tarjeta y ajusta el margen */
+    }
+  }
+  

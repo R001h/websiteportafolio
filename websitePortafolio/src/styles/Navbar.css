@@ -1,32 +1,87 @@
-.NavbarM{
- 
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-.th{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 25px;
+
+/* Estilo del contenedor del navbar */
+.NavbarM {
+  background-color: #2F2A8A; /* Fondo azul oscuro */
+  color: white;
+  padding: 10px 0;
   position: fixed;
   width: 100%;
   top: 0;
-  justify-content: center;
-  background-color: rgb(50, 50, 119);
-  color: azure;
-  margin-top: 0px;
+  z-index: 1000;
+  text-align: center;
 }
- 
+
+.NavbarM.scrolled {
+  background-color: #1D1B6E; /* Color más oscuro al hacer scroll */
+}
+
+/* Estilo del logo centrado */
+.th {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px; /* Espacio debajo del logo */
+}
+
+/* Estilo para los enlaces alineados horizontalmente */
 .navbary {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 25px;
-  position: fixed;
-  padding: 8px;
-  width: 100%;
-  top: 0;
   justify-content: center;
-  height: 30px;
-  background-color: rgb(50, 50, 119);
-  margin-top: 20px;
-  color: azure;
+  gap: 30px;
+  padding: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Botón de hamburguesa (vista móvil) */
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menú desplegable para móvil */
+.navbary.open {
+  flex-direction: column;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbary {
+      display: none;
+  }
+
+  .navbary.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+
+  .nav-link {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid white;
+  }
 }
