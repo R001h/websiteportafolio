@@ -1,12 +1,13 @@
 
 .banner {
-    background-color: #2F2A8A; /* Color de fondo del banner */
+    background-color: #1D1B6E; /* Color de fondo del banner */
     color: white;
     padding: 60px; /* Espaciado interno del banner */
     text-align: center;
     position: relative;
     width: 800px;
     height: 400px;
+    margin-top: -30px;
   }
   
   .banner-title {

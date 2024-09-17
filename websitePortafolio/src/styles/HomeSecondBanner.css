@@ -12,7 +12,7 @@
     align-items: center;
     border-radius: 0px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
-    background: linear-gradient(135deg, #2F2A8A 0%, #6A5ACD 100%); /* Degradado de color */
+    background: #1D1B6E ;
 }
 
 .banner-title {

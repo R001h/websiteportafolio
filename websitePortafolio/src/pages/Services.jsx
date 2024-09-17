@@ -3,11 +3,13 @@ import '../styles/Home.css'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import  ServiciosCard from '../components/ServiciosCard'
+import Whitebox from '../components/Whitebox'
 
 function Services () {
 
   return (
     <>
+      < Whitebox  />
       <Header />
       <div >
       <ServiciosCard />
