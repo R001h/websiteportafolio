@@ -1,26 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ConsultHistory.css';
-import GetConsult from '../services/GetTask';
-import PutConsult from '../services/PutTask';
-import DeleteTask from '../services/DeleteTask';
-
+import { getConsults, putConsult, deleteConsult } from '../services/TaskService';
+import TaskForm from '../components/TaskForm';
 
 function ConsultHistory() {
     const [consults, setConsults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [editingTaskId, setEditingTaskId] = useState(null);
-    const [task, setTask] = useState('');
-    const [tareaDetails, setTareaDetails] = useState('');
     const [success, setSuccess] = useState(null);
+    const [editingTaskId, setEditingTaskId] = useState(null);
+    const [formData, setFormData] = useState({ task: '', tareaDetails: '' });
 
-    // Fetch consultations on component mount
     useEffect(() => {
         const fetchConsults = async () => {
             setLoading(true);
             setError(null);
             try {
-                const consultData = await GetConsult();
+                const consultData = await getConsults();
                 setConsults(consultData);
             } catch (error) {
                 console.error('Error fetching consult data:', error);
@@ -33,11 +29,9 @@ function ConsultHistory() {
         fetchConsults();
     }, []);
 
-    const handleEdit = (taskId) => {
-        const consult = consults.find(c => c.id === taskId);
-        setTask(consult.task);
-        setTareaDetails(consult.tareaDetails);
-        setEditingTaskId(taskId);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
     const handleSubmitEdit = async (e) => {
@@ -47,10 +41,10 @@ function ConsultHistory() {
         setSuccess(null);
 
         try {
-            await PutConsult(editingTaskId, { task, tareaDetails });
+            await putConsult(editingTaskId, formData);
             setSuccess('Task updated successfully.');
             const updatedConsults = consults.map(consult => 
-                consult.id === editingTaskId ? { ...consult, task, tareaDetails } : consult
+                consult.id === editingTaskId ? { ...consult, ...formData } : consult
             );
             setConsults(updatedConsults);
             setEditingTaskId(null);
@@ -70,7 +64,7 @@ function ConsultHistory() {
         setError(null);
 
         try {
-            await DeleteTask(taskId);
+            await deleteConsult(taskId);
             setConsults(consults.filter(consult => consult.id !== taskId));
             setSuccess('Task deleted successfully.');
         } catch (error) {
@@ -97,8 +91,10 @@ function ConsultHistory() {
                             <li key={consult.id}>
                                 <strong>Tarea:</strong> {consult.task}
                                 <strong>Detalle de Tarea:</strong> {consult.tareaDetails}
-                                <button className='btnedit' onClick={() => handleEdit(consult.id)}>Edit</button>
-                            
+                                <button className='btnedit' onClick={() => {
+                                    setFormData({ task: consult.task, tareaDetails: consult.tareaDetails });
+                                    setEditingTaskId(consult.id);
+                                }}>Edit</button>
                                 <button className='btndel' onClick={() => handleDelete(consult.id)}>Delete</button>
                             </li>
                         ))}
@@ -109,42 +105,14 @@ function ConsultHistory() {
             {editingTaskId && (
                 <div className='EditTask'>
                     <h2>Edit Task</h2>
-                    <form onSubmit={handleSubmitEdit} className="Consult_Box">
-                        <label htmlFor="task">Task Name:</label>
-                        <input 
-                            type="text" 
-                            placeholder="Task Name" 
-                            className='task' 
-                            id="task" 
-                            required 
-                            maxLength="45"
-                            value={task} 
-                            onChange={(e) => setTask(e.target.value)}
-                        />
-                        <br />
-                        <label htmlFor="tareaDetails">Task Details:</label>
-                        <input 
-                            type="text" 
-                            placeholder="Task Details" 
-                            className='tareaDetails' 
-                            id="tareaDetails" 
-                            required 
-                            minLength="1"
-                            maxLength="1000"
-                            value={tareaDetails} 
-                            onChange={(e) => setTareaDetails(e.target.value)}
-                        />
-                        <br />
-                        <button 
-                            type='submit' 
-                            id="btnSaveTask" 
-                            className="btnSaveTask"
-                            disabled={loading}
-                        >
-                            {loading ? 'Saving...' : 'Save Task'}
-                        </button>
-                        <button type='button' onClick={() => setEditingTaskId(null)}>Cancel</button>
-                    </form>
+                    <TaskForm 
+                        task={formData.task}
+                        tareaDetails={formData.tareaDetails}
+                        onChange={handleChange}
+                        onSubmit={handleSubmitEdit}
+                        onCancel={() => setEditingTaskId(null)}
+                        loading={loading}
+                    />
                 </div>
             )}
         </div>

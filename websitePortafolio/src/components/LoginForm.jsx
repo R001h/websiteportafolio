@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/LoginForm.css'; // Asegúrate de que este archivo esté en la ruta correcta
-import GetUsers from '../services/GetUsers'; 
+import { getUsers } from '../services/UserServices'; // Importa getUsers desde UserServices.js
 import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
@@ -9,11 +9,13 @@ function LoginForm() {
   const [email, setEmail] = useState('');
   const navigate = useNavigate(); // Use relocation button
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       // Obtener la lista de usuarios
-      const users = await GetUsers();
+      const users = await getUsers();
       // Buscar al usuario que coincida con el email y contraseña proporcionados
       const user = users.find(u => u.email === email && u.psw === psw);
       if (user) {
@@ -55,7 +57,6 @@ function LoginForm() {
           value={username} 
           onChange={(e) => setUsername(e.target.value)} 
         />
-   
         <label htmlFor="psw">Password:</label>
         <input 
           type="password" 

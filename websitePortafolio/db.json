@@ -54,11 +54,21 @@
       "task": "tarea ",
       "tareaDetails": "prueba 001"
     }
-  ],"img": [
-  {
-    "id": "3bf0",
-    "url": "tarea "
-  
-  }
-]
+  ],
+  "product": [
+    {
+      "id": "3bf0",
+      "producto_name": " ",
+      "precio": " ",
+      "descripcion": " ",
+      "marca": " ",
+      "url": " ",
+      "img_name": " "
+    },
+    {
+      "id": "6b68",
+      "task": "tarea ",
+      "tareaDetails": "prueba 001"
+    }
+  ]
 }

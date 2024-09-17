@@ -2,19 +2,21 @@ import React from 'react';
 import '../styles/Home.css';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Navbar from '../components/Navbar';
+import ConsultForm from '../components/ConsultForm';
+import ConsultHistory from '../components/ConsultHistory';
 import Whitebox from '../components/Whitebox'
-import HomeBanner from '../components/HomeBanner'
-import HomeSecondBanner from '../components/HomeSecondBanner'
 
-function Home() {
+function Shop() {
   return (
     <>
       <div className='divbox'>
         < Whitebox  />
         <Header />
+        <Navbar />
         <main>
-         <HomeBanner /> 
-         <HomeSecondBanner />
+          <ConsultForm />
+          <ConsultHistory />
         </main>
         <Footer />
       </div>
@@ -22,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Shop;

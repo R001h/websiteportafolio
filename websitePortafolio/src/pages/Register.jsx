@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Register.css'
-import Footer from '../components/Footer'
 import RegisterForm from '../components/RegisterForm'
+import FooterBase from '../components/FooterBase';
 
 
 
@@ -11,7 +11,7 @@ function Register() {
     <>
       <div className='LoginBox' >
       <RegisterForm />
-      <Footer />
+      <FooterBase />
       </div>
     </>
   )
