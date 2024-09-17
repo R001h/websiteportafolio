@@ -57,16 +57,7 @@
   ],
   "product": [
     {
-      "id": "3bf0",
-      "producto_name": " ",
-      "precio": " ",
-      "descripcion": " ",
-      "marca": " ",
-      "url": " ",
-      "img_name": " "
-    },
-    {
-      "id": "6b68",
+      "id": "e5ba",
       "task": "tarea ",
       "tareaDetails": "prueba 001"
     }

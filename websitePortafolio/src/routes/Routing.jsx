@@ -7,6 +7,8 @@ import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Services from '../pages/Services';
 import AboutUs from '../pages/AboutUs';
+import AdminUtilities from '../pages/AdminUtilities';
+import Shop from '../pages/Shop';
 
 
 const Routing = () => {
@@ -19,6 +21,8 @@ const Routing = () => {
        <Route path="/Contact" element={<Contact />} />
        <Route path="/Services" element={<Services />} />
        <Route path="/AboutUs" element={<AboutUs />} />
+       <Route path="/Shop" element={<Shop />} />
+       <Route path="/AdminUtilities" element={<AdminUtilities />} />
      </Routes>
     </Router>
    );

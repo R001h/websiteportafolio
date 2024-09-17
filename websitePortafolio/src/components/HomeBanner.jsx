@@ -4,6 +4,8 @@ import htmlLogo from '../assets/html.png';
 import cssLogo from '../assets/css.png';
 import reactLogo from '../assets/react.png';
 import jsLogo from '../assets/javascript.png';
+import nodejs from '../assets/nodejs.png';
+
 
 const HomeBanner = () => {
   return (
@@ -19,6 +21,7 @@ const HomeBanner = () => {
           <img src={cssLogo} alt="CSS" />
           <img src={reactLogo} alt="React" />
           <img src={jsLogo} alt="JavaScript" />
+          <img src={nodejs} alt="NodeJs" />
         </div>
       </div>
     </div>
