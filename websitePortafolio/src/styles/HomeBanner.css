@@ -1,0 +1,51 @@
+
+.banner {
+    background-color: #2F2A8A; /* Color de fondo del banner */
+    color: white;
+    padding: 60px; /* Espaciado interno del banner */
+    text-align: center;
+    position: relative;
+    width: 800px;
+    height: 400px;
+  }
+  
+  .banner-title {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.25rem;
+    margin: 10px 0;
+  }
+  
+  .technology-strip {
+    background-color: white;
+    position: absolute;
+    bottom: -30px; /* Posiciona la cinta debajo del banner */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .technology-logos {
+    display: flex;
+    align-items: center;
+    animation: scroll 15s linear infinite;
+    margin-bottom: 40px;
+  }
+  
+  .technology-logos img {
+    height: 50px; /* Ajusta el tamaño de los logotipos */
+    margin-right: 30px; /* Espaciado entre logotipos */
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

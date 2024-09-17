@@ -6,6 +6,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Services from '../pages/Services';
+import AboutUs from '../pages/AboutUs';
 
 
 const Routing = () => {
@@ -17,6 +18,7 @@ const Routing = () => {
        <Route path="/Register" element={<Register />} />
        <Route path="/Contact" element={<Contact />} />
        <Route path="/Services" element={<Services />} />
+       <Route path="/AboutUs" element={<AboutUs />} />
      </Routes>
     </Router>
    );

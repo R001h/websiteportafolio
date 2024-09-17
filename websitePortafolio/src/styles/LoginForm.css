@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif; /* Fuente moderna y limpia */
-    background: linear-gradient(135deg, #003566, #212529); /* Fondo de página en un gradiente de azul oscuro a negro */
+    background: linear-gradient(135deg, #3566, #212529); /* Fondo de página en un gradiente de azul oscuro a negro */
     display: flex;
     justify-content: center;
     align-items: center;

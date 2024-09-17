@@ -1,0 +1,63 @@
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .contact-header {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #2F2A8A;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+  
+  .form-mail {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-mail label {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-mail input,
+  .form-mail textarea {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-mail textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  
+  .form-mail button {
+    background-color: #2F2A8A;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-mail button:hover {
+    background-color: #1a1a6b;
+  }
+  

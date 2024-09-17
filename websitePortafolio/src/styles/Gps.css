@@ -1,0 +1,20 @@
+.GpsTH {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Modern and clean font */
+    display: flex;
+    justify-content: flex-start; /* Align content to the start of the flex container */
+    align-items: flex-start; /* Align items to the start of the flex container */
+    color: aliceblue;
+    height: auto; /* Adjust height to fit content */
+    padding: 20px;
+    background-color: #2F2A8A; /* Optional: Add a background color for better contrast */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+.GpsBox {
+    border: 3px solid coral;
+    padding: 10px; /* Optional: Add padding for better spacing */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    background-color: #fff; /* Optional: Add a background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
