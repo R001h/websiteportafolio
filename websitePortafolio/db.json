@@ -58,8 +58,15 @@
   "product": [
     {
       "id": "e5ba",
-      "task": "tarea ",
-      "tareaDetails": "prueba 001"
+      "type": "Office Suite ",
+      "operating_systems_supported" : "Windows & Mac OS",
+      "version": "prueba 001","system_requirements":" ",
+      "model #":"",
+      "languaje":"Spa/Eng/Rus/Jap/Chn",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA...",
+      "precio": "$100 "
+
     }
+
   ]
 }
