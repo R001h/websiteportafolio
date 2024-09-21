@@ -1,8 +1,8 @@
-import React, { useState } from "react"; // Importa React y useState desde 'react'
-import '../styles/ConsultForm.css'; // Importa el archivo de estilos CSS para el componente
-import { postConsult } from '../services/TaskService'; // Importa la función postConsult desde el servicio TaskService
-import TaskForm from '../components/TaskForm'; // Importa el componente TaskForm
-
+import React, { useState } from "react";
+import '../styles/ConsultForm.css'; 
+import { postConsult } from '../services/TaskService';
+import TaskForm from '../components/TaskForm'; 
+ 
 function ConsultForm() { 
     // Definición de estados usando useState
     const [task, setTask] = useState(''); // Estado para almacenar el valor de la tarea

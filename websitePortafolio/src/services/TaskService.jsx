@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/product';
+const BASE_URL = 'http://localhost:3001/task';
 
 export const getConsults = async () => {
     const response = await fetch(BASE_URL);

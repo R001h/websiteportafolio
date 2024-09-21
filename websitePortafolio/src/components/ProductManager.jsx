@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { getProduct, postProduct, putProduct, deleteProduct } from '../services/ProductService';
+import React, { useState, useEffect } from 'react';
 import ProductForm from './ProductForm';
 import ProductList from './ProductList';
+import GetProduct from '../services/GetProduct';
+import PostProduct from '../services/PostProduct';
+import PutProduct from '../services/PutProduct';
+import DeleteProduct from '../services/DeleteProduct';
 
 const ProductManager = () => {
     const [products, setProducts] = useState([]);
@@ -9,42 +12,45 @@ const ProductManager = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const productList = await getProduct();
-            setProducts(productList);
+            const data = await GetProduct();
+            setProducts(data);
         };
         fetchProducts();
     }, []);
 
     const handleAddProduct = async (product) => {
-        const newProduct = await postProduct(product);
+        const newProduct = await PostProduct(product);
         setProducts([...products, newProduct]);
     };
 
-    const handleUpdateProduct = async (product) => {
-        const updatedProduct = await putProduct(editingProduct.id, product);
-        setProducts(products.map(p => (p.id === editingProduct.id ? updatedProduct : p)));
+    const handleEditProduct = async (updatedData) => {
+        const updatedProduct = await PutProduct(updatedData.id, updatedData);
+        setProducts(products.map(product => (product.id === updatedData.id ? updatedProduct : product)));
         setEditingProduct(null);
     };
 
     const handleDeleteProduct = async (id) => {
-        await deleteProduct(id);
+        await DeleteProduct(id);
         setProducts(products.filter(product => product.id !== id));
     };
 
     return (
         <div>
-            <h1>Gestión de Productos</h1>
-            <ProductForm 
-                onSubmit={editingProduct ? handleUpdateProduct : handleAddProduct} 
+            <br />
+            <ProductForm
+                onSubmit={editingProduct ? handleEditProduct : handleAddProduct}
                 initialData={editingProduct} 
             />
-            <ProductList 
-                products={products} 
-                onEdit={setEditingProduct} 
-                onDelete={handleDeleteProduct} 
+            <ProductList
+                products={products}
+                onEdit={setEditingProduct}
+                onDelete={handleDeleteProduct}
             />
+
+            <br />
         </div>
     );
+    
 };
 
 export default ProductManager;

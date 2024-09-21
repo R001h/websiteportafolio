@@ -11,9 +11,9 @@ const HomeBanner = () => {
   return (
     <div className="banner">
       <div className="banner-content">
-        <h1 className="banner-title">Transformative Customer Experiences </h1>
+        <h1 className="banner-title">Transformative Customer <br />Experiences </h1>
         <br />
-        <p className="banner-subtitle">We build brands and websites for companies focused on building the ultimate customer journey.</p>
+        <p className="banner-subtitle">We build brands and <br />websites for companies <br /> focused on building <br /> the ultimate customer journey.</p>
       </div>
       <div className="technology-strip">
         <div className="technology-logos">

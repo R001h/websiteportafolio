@@ -1,15 +1,16 @@
-
 .banner {
-    background-color: #1D1B6E; /* Color de fondo del banner */
-    color: white;
-    padding: 60px; /* Espaciado interno del banner */
-    text-align: center;
-    position: relative;
-    width: 800px;
-    height: 400px;
-    margin-top: -30px;
-  }
-  
+  background-color: #1D1B6E;
+  color: white;
+  padding: 60px;
+  text-align: center;
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 400px;
+  margin: -30px auto 0 auto; /* Centrar horizontalmente */
+  margin-bottom: 15px;
+}
+
   .banner-title {
     font-size: 2rem;
     margin: 0;
@@ -33,7 +34,7 @@
     display: flex;
     align-items: center;
     animation: scroll 18s linear infinite;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
   
   .technology-logos img {
@@ -50,3 +51,43 @@
     }
   }
   
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner {
+    padding: 40px;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+
+  .technology-logos img {
+    height: 40px; /* Smaller logos on mobile */
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 30px;
+  }
+
+  .banner-title {
+    font-size: 1.25rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .technology-logos img {
+    height: 35px; /* Even smaller logos on mobile */
+    margin-right: 15px;
+  }
+}

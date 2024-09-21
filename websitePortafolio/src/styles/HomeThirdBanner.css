@@ -1,0 +1,38 @@
+.homeThirdbanner {
+    background-color: #1D1B6E; /* Background color */
+    color: white;
+    padding: 60px; /* Inner spacing */
+    text-align: center;
+    width: 900px;
+    height: auto; /* Adjusted for dynamic height */
+    margin: 0 auto; /* Centering */
+    position: relative;
+}
+
+.bannerTtitle {
+    font-size: 2.5rem; /* Larger font size */
+   
+    margin: 0;
+    line-height: 1.2; /* Line height */
+}
+
+.bannerTsubtitle {
+    font-size: 1.5rem; /* Subtitle font size */
+    margin: 10px 0;
+    font-style: italic; /* Italic style */
+}
+
+@media (max-width: 768px) {
+    .homeThirdbanner {
+        padding: 40px; /* Reduced padding for smaller screens */
+        height: auto; /* Dynamic height */
+    }
+
+    .bannerTtitle {
+        font-size: 2rem; /* Smaller font size */
+    }
+
+    .bannerTsubtitle {
+        font-size: 1.25rem; /* Smaller subtitle font size */
+    }
+}

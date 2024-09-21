@@ -1,81 +1,79 @@
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 2rem 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 100px;
+  gap: 10px; /* Add gap between the two columns */
+}
+
+.footer-links {
+  text-align: left;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+/* Full-width copyright section */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
     flex-direction: column;
-    align-items: center;
-  }
-  
-  .footer-logo img {
-    max-width: 150px;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 900px; /* Adjust to fit your design */
-    margin-bottom: 1.5rem;
-  }
-  
-  .footer-column {
-    margin: 0 1rem;
-    flex: 1;
-    min-width: 150px; /* Adjust to fit your design */
-  }
-  
-  .footer-column h4 {
-    border-bottom: 2px solid #fff;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-column ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-column ul li {
-    margin: 0.5rem 0;
-  }
-  
-  .footer-column ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-column ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-media {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .social-media li {
-    list-style: none;
-  }
-  
-  .social-media a {
-    color: #fff;
-    font-size: 1.5rem;
-  }
-  
-  .footer-copyright {
-    margin-top: 1rem;
     text-align: center;
+    gap: 20px; /* Reduce the gap on smaller screens */
   }
-  
+
+  .footer-logo {
+    margin-top: 20px;
+  }
+}

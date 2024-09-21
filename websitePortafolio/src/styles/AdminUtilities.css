@@ -1,43 +1,15 @@
-.Consult_Box {
-    display: flex;
-    flex-direction: column;
+.taskbox-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre las columnas */
+    margin-bottom: 20px; /* Espacio entre el contenedor y ToolRegForm */
+}
+
+.taskboox { 
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
     align-items: center;
-    padding: 20px; /* Espaciado alrededor del formulario */
-    background: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido */
-    border-radius: 15px; /* Radio de borde ajustado */
-    box-shadow: 20px 40px rgba(0, 0, 0, 0.7); /* Sombra intensa */
-    backdrop-filter: blur(12px); /* Efecto de desenfoque de fondo */
-    max-width: 320px; /* Tamaño máximo ajustado */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.btnSavetask {
-    height: 38px;
-    border: 1px solid; 
-    color: #0b0b0b; /* Texto oscuro */
-    background-color: #8da9c4; /* Fondo azul claro */
-    border-radius: 8px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-}
-
-.btnSavetask:hover {
-    background-color: #003566; /* Fondo azul oscuro al pasar el ratón */
-    color: #ffffff; /* Texto blanco al pasar el ratón */
-}
-
-.btnDeleteTask {
-    color: red;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
+    align-content: center;
 }
 
 /* Estilos generales para los campos de entrada */
@@ -55,7 +27,7 @@ input:focus, textarea:focus {
     border-color: #007BFF; /* Cambia el color del borde al hacer foco */
     outline: none; /* Quita el borde predeterminado */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra suave */
-    background-color: #0a1d2e; /* Cambia el color de fondo al hacer foco */
+    background-color: #f0f8ff; /* Cambia el color de fondo al hacer foco */
 }
 
 /* Estilo para los botones */

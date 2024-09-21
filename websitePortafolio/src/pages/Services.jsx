@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import  ServiciosCard from '../components/ServiciosCard'
 import Whitebox from '../components/Whitebox'
+import ServicesBanner from '../components/ServicesBanner';
 
 function Services () {
 
@@ -12,6 +13,7 @@ function Services () {
       < Whitebox  />
       <Header />
       <div >
+      <ServicesBanner />
       <ServiciosCard />
       </div>
       <br />

@@ -1,0 +1,26 @@
+
+.banner-image-container {
+    
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin: 0 auto;
+    padding: 20px 0; /* Espacio superior e inferior */
+}
+
+.banner-image-container img {
+    max-width: 100%; /* La imagen se adapta al ancho del contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .banner-image-container img {
+        width: 90%; /* Imagen más pequeña en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-image-container img {
+        width: 100%; /* Imagen al 100% del ancho del contenedor en pantallas pequeñas */
+    }
+}
