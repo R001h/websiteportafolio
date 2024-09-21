@@ -10,15 +10,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos generales para la barra de navegación */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 /* Responsive design: ajustes en dispositivos pequeños */
 @media (max-width: 768px) {

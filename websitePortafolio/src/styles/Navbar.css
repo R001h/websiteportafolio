@@ -1,4 +1,4 @@
-
+/* Estilos generales */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -7,6 +7,7 @@ body {
 
 /* Estilo del contenedor del navbar */
 .NavbarM {
+  
   background-color: #2F2A8A; /* Fondo azul oscuro */
   color: white;
   padding: 10px 0;
@@ -35,7 +36,8 @@ body {
 .navbary {
   list-style: none;
   display: flex;
-  justify-content: center; /* Center the links */
+  justify-content: center; 
+  list-style: none;
   gap: 30px;
   padding: 0;
 }
