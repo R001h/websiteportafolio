@@ -21,7 +21,7 @@ input {
   border-radius: 10px;
   font-size: 14px;
   background-color: #f8f9fa; /* Fondo claro para el input */
-  color: #d2e8ff; /* Texto oscuro en el input */
+  color: #000000; /* Texto oscuro en el input */
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(141, 169, 196, 0.5);
 }
@@ -32,14 +32,14 @@ input:focus {
   border-color: #8da9c4;
   box-shadow: 0 0 20px rgba(141, 169, 196, 0.8);
   background-color: #e9ecef; /* Fondo más claro al enfocar */
-  color: #d2e8ff; /* Asegura que el texto siga siendo oscuro al enfocar */
+  color: #000000; /* Asegura que el texto siga siendo oscuro al enfocar */
   animation: pulse 1s infinite;
 }
 
 /* Para el estado de escritura */
 input:valid {
   background-color: #ffffff; /* Fondo blanco al escribir */
-  color: #d2e8ff; /* Texto oscuro para mayor legibilidad */
+  color: #000000; /* Texto oscuro para mayor legibilidad */
 }
 
 

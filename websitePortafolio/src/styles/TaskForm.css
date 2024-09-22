@@ -30,7 +30,7 @@ input {
     border-radius: 10px; 
     font-size: 14px; 
     background-color: #f8f9fa; 
-    color: #212529; 
+    color: #000000; 
     transition: all 0.3s ease; 
     margin-bottom: 15px; /* Espaciado entre inputs */
 }
@@ -38,7 +38,7 @@ input {
 /* Estilo al enfocar el campo de entrada */
 input:focus {
     outline: none;
-    border-color: #8da9c4; 
+    border-color: #000000; 
     background-color: #e9ecef; 
 }
 
@@ -50,7 +50,7 @@ input:focus {
     font-size: 15px;
     cursor: pointer;
     background: linear-gradient(135deg, #8da9c4, #003566); 
-    color: #ced4da; 
+    color: #000000; 
     transition: all 0.3s ease; 
 }
 

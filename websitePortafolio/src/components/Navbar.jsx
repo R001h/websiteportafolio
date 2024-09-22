@@ -42,6 +42,7 @@ function Navbar() {
         </button>
         <ul className={navbaryClass}>
           <Link to="/services" className="nav-link">Services</Link>
+          <Link to="/shop" className="nav-link">Shop</Link>
           <Link to="/aboutus" className="nav-link">About Us</Link>
           <Link to="/contact" className="nav-link">Let's Talk</Link>
         </ul>

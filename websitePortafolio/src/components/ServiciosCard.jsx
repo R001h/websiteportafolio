@@ -17,7 +17,7 @@ function ServiciosCard() {
               <li>Keyword</li>
               <li>Create reference</li>
             </ul>
-            <p>minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p> {/* Texto adicional */}
+            <p></p> {/* Texto adicional */}
           </div>
         </div>
         {/* Tarjeta de servicio para "Website Design" */}
@@ -34,7 +34,7 @@ function ServiciosCard() {
               <li>Recreate any website/ not matter the technology</li>
               <li>CMS Implementation</li>
             </ul>
-            <p>minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p> {/* Texto adicional */}
+            <p></p> {/* Texto adicional */}
           </div>
         </div>
         {/* Tarjeta de servicio para "Technology" */}

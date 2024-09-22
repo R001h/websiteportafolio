@@ -7,6 +7,7 @@
     height: auto; /* Adjusted for dynamic height */
     margin: 0 auto; /* Centering */
     position: relative;
+    padding-top: -80px;
 }
 
 .bannerInfotitle {

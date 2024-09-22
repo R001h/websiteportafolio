@@ -7,8 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-      {/* Flexbox for two columns: links and logo */}
+    <footer className="footer">{/* Flexbox for two columns: links and logo */}
       <div className="footer-top">
         
         {/* First Column - Links */}
