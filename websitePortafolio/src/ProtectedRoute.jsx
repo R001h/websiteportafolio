@@ -1,13 +1,16 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({Children}) =>{
+const ProtectedRoute = ({children}) =>{
+
+  console.log(children);
+  
     const estaAutenticado = localStorage.getItem('Autenticado') === 'true' ;
     if (!estaAutenticado){
         return <Navigate to="/" />;
     }
 
-  return Children;
+  return children;
 };
 
 export default ProtectedRoute;
