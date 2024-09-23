@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Login.css'
-import LoginForm from '../components/LoginForm'
+import Authtool from '../components/Authtool'
 import FooterBase from '../components/FooterBase';
 
 
@@ -10,7 +10,7 @@ function Login() {
   return (
     <> 
       <div className='divbox' >
-      <LoginForm />
+      <Authtool />
       <FooterBase />
       </div>
     </>

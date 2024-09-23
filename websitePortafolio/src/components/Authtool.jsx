@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import '../styles/LoginForm.css'; 
 import { GetUsers } from '../services/UserServices'; 
 import { useNavigate } from 'react-router-dom';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css'; // Importar estilos de iziToast
 
-function LoginForm() {
-  const [username, setUsername] = useState('');
-  const [psw, setPsw] = useState('');
+const Authtool = () => {
   const [email, setEmail] = useState('');
-  const navigate = useNavigate(); // Use relocation button
+  const [psw, setPsw] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
@@ -18,23 +19,44 @@ function LoginForm() {
       const users = await GetUsers();
       // Buscar al usuario que coincida con el email y contraseña proporcionados
       const user = users.find(u => u.email === email && u.psw === psw);
+
       if (user) {
         console.log('Inicio de sesión exitoso:', user);
-        alert('Inicio de sesión exitoso.');
-        // Navegar a la ruta deseada
-        navigate('/home'); // Cambia '/home' a la ruta que desees
+        iziToast.success({
+          title: 'Éxito',
+          message: 'Inicio de sesión exitoso.',
+          position: 'topRight',
+        });
+        
+        // Redirigir según el rol del usuario
+        if (user.role === 'admin') {
+          navigate('/AdminUtilities'); // Redirigir a utilidades de admin
+        } else if (user.role === 'user') {
+          navigate('/AdminShop'); // Redirigir a la tienda de usuarios
+        }
       } else {
-        alert('Email o contraseña incorrectos.');
+        setError('Credenciales inválidas');
+        iziToast.warning({
+          title: 'Advertencia',
+          message: 'Email o contraseña incorrectos.',
+          position: 'topRight',
+        });
       }
-    } catch (error) {
-      console.error('Error al autenticar el usuario:', error);
-      alert('Hubo un error al intentar iniciar sesión.');
+    } catch (err) {
+      console.error('Error al autenticar el usuario:', err);
+      setError('Error al iniciar sesión');
+      iziToast.error({
+        title: 'Error',
+        message: 'Hubo un error al intentar iniciar sesión.',
+        position: 'topRight',
+      });
     }
   };
 
   return (
     <div className='LoginBox'>
-      <form onSubmit={handleSubmit} className="box_login">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin} className="box_login">
         <label htmlFor="email">Email:</label>
         <input 
           type="text" 
@@ -45,17 +67,6 @@ function LoginForm() {
           maxLength="45" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)} 
-        />
-        <label htmlFor="username">User Name:</label>
-        <input 
-          type="text" 
-          placeholder="User Name" 
-          className='username' 
-          id="username" 
-          required 
-          maxLength="45" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
         />
         <label htmlFor="psw">Password:</label>
         <input 
@@ -70,15 +81,9 @@ function LoginForm() {
         <br />
         <button type='submit' id="btnLogin" className="btnLogin">Log In</button>
       </form>
-      
-      <div className="containerButtons">
-        <br />
-        <button id="btnSignUp" className="btnSignUp">
-          <a href="/register">If you don't have an account, create one.</a> 
-        </button>
-      </div>
+      {error && <p>{error}</p>}
     </div>
   );
-}
+};
 
-export default LoginForm;
+export default Authtool;

@@ -1,13 +1,13 @@
 .homeInfo {
     background-color: #1D1B6E; /* Background color */
     color: white;
-    padding: 60px; /* Inner spacing */
+    padding: 50px; /* fondo spacing */
     text-align: center;
-    width: 900px;
+    width: 100%;
     height: auto; /* Adjusted for dynamic height */
     margin: 0 auto; /* Centering */
     position: relative;
-    padding-top: -80px;
+    padding-top: 60px;
 }
 
 .bannerInfotitle {

@@ -3,6 +3,7 @@ import '../styles/AboutUs.css'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Whitebox from '../components/Whitebox'
+import AboutusMaterial from '../components/AboutusMaterial'
 
 
 function AboutUs() {
@@ -13,8 +14,8 @@ function AboutUs() {
       <Header />
       <Whitebox />
       <br />
-        
-        <Footer />
+      <AboutusMaterial />
+      <Footer />
       </>
     )
   }

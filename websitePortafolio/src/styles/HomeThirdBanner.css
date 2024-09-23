@@ -3,7 +3,7 @@
     color: white;
     padding: 60px; /* Inner spacing */
     text-align: center;
-    width: 900px;
+    width: 100%;
     height: auto; /* Adjusted for dynamic height */
     margin: 0 auto; /* Centering */
     position: relative;

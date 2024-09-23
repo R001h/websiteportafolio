@@ -1,0 +1,46 @@
+.aboutusContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1.AboutUsTH {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1D1B6E; /* Brand color */
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2F2A8A; /* Darker shade for section titles */
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    line-height: 1.6; /* Better spacing for readability */
+}
+
+p {
+    line-height: 1.6; /* Improved text readability */
+    margin-bottom: 10px;
+}
+
+.historyContainer,
+.missionContainer,
+.servicesContainer,
+.valuesContainer,
+.contactContainer {
+    padding: 15px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Slightly rounded corners for sections */
+    background-color: #ffffff; /* White background for sections */
+}

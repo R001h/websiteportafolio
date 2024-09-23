@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import '../styles/ConsultForm.css'; 
 import { postConsult } from '../services/TaskService';
 import TaskForm from '../components/TaskForm'; 
- 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css'; // Importa los estilos de iziToast
+
 function ConsultForm() { 
     // Definición de estados usando useState
     const [task, setTask] = useState(''); // Estado para almacenar el valor de la tarea
@@ -16,12 +18,20 @@ function ConsultForm() {
         try {
             // Intenta enviar los datos del formulario usando postConsult
             await postConsult({ task, tareaDetails });
-            alert('Registro exitoso.'); // Muestra un mensaje de éxito
+            iziToast.success({
+                title: 'Éxito',
+                message: 'Registro exitoso.',
+                position: 'topRight',
+            }); // Muestra un mensaje de éxito
             setTask(''); // Limpia el campo de la tarea
             setTareaDetails(''); // Limpia el campo de detalles de la tarea
         } catch (error) {
-            console.error('Error registering task:', error); // Muestra el error en la consola
-            alert('Error ingresando tarea. Inténtalo nuevamente.'); // Muestra un mensaje de error
+            console.error('Error registrando la tarea:', error); // Muestra el error en la consola
+            iziToast.error({
+                title: 'Error',
+                message: 'Error ingresando tarea. Inténtalo nuevamente.',
+                position: 'topRight',
+            }); // Muestra un mensaje de error
         } finally {
             setLoading(false); // Establece el estado de carga como falso
         }

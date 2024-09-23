@@ -16,8 +16,9 @@ function Home() {
         <Header />
         <main>
          <HomeBanner /> 
-         <HomeSeBannerImg/> 
+         
          <HomeSecondinfo />
+         <HomeSeBannerImg/> 
          <HomeThirdBanner />
         </main>
         <Footer />

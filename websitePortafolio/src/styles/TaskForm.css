@@ -1,64 +1,75 @@
-
-
-/* Estilo del formulario */
+/* General */
 .Consult_Box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px; 
-    box-shadow: 0 20px 40px rgba(132, 133, 187, 0.7); 
-    max-width: 600px; 
-    width: 100%;
-   
-   
-}
-
-/* Estilo de las etiquetas */
-label {
+    max-width: 300px; /* Ajustar el ancho del formulario */
+    margin: 30px auto; /* Centramos el formulario */
+    padding: 30px;
     font-family: 'Roboto', sans-serif;
     color: #333;
-    margin-bottom: 5px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(132, 133, 187, 0.7); /* Sombra intensa */
+    text-align: left; /* Texto alineado a la izquierda */
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido */
 }
 
-/* Estilo de los campos de entrada */
+/* Títulos */
+label {
+    font-weight: 600; /* Negrita para etiquetas */
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    display: block; /* Hacer que cada etiqueta ocupe toda la línea */
+}
+
+/* Inputs */
 input {
-    padding: 12px;
-    border: 2px solid #003566; 
-    border-radius: 10px; 
-    font-size: 14px; 
-    background-color: #f8f9fa; 
-    color: #000000; 
-    transition: all 0.3s ease; 
-    margin-bottom: 15px; /* Espaciado entre inputs */
+    width: 100%; /* Hacer que los inputs ocupen el ancho total */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre inputs */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s; /* Transición suave para el borde */
 }
 
-/* Estilo al enfocar el campo de entrada */
 input:focus {
-    outline: none;
-    border-color: #000000; 
-    background-color: #e9ecef; 
+    border-color: #1D1B6E; /* Color del borde en foco */
+    outline: none; /* Sin contorno en foco */
 }
 
-/* Estilo del botón */
+/* Botones */
 .btnSignUp {
-    padding: 12px 24px; 
-    border: none;
-    border-radius: 12px;
-    font-size: 15px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #8da9c4, #003566); 
-    color: #000000; 
-    transition: all 0.3s ease; 
+    background-color: #1D1B6E; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición para el color de fondo */
 }
 
 .btnSignUp:hover {
-    background: linear-gradient(135deg, #002f5b, #102d44); 
+    background-color: #1A1B60; /* Color de fondo al pasar el mouse */
 }
 
-/* Estilo del botón de cancelar */
-button[type="button"] {
-    margin-top: 10px; /* Espaciado para el botón de cancelar */
+button:disabled {
+    background-color: #ccc; /* Color cuando está deshabilitado */
+    cursor: not-allowed; /* Cursor de no permitido */
+}
+
+/* Mensajes de error y éxito */
+.error-message, .success-message {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.error-message {
+    color: #d9534f; /* Color de error */
+    background-color: #f8d7da; /* Fondo claro para errores */
+    border: 1px solid #d9534f;
+}
+
+.success-message {
+    color: #18187e; /* Color de éxito */
+    background-color: #d1ecf1; /* Fondo claro para éxito */
+    border: 1px solid #5bc0de;
 }

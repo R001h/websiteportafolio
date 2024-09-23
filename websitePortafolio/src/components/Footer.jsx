@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">{/* Flexbox for two columns: links and logo */}
+    <footer className="footer">
       <div className="footer-top">
         
         {/* First Column - Links */}
@@ -24,6 +24,15 @@ const Footer = () => {
         {/* Second Column - Logo */}
         <div className="footer-logo">
           <img src={Logo_Inver} alt="Company Logo" />
+          <br />
+          <div className="footer-contact">
+            <p>
+            <a href="mailto:info@fixbitscr.com">info@fixbitscr.com</a>
+            </p>
+            <p>
+              Phone: <a href="tel:+50687563893">(506) 8756-3893</a>
+            </p>
+          </div>
         </div>
 
       </div>

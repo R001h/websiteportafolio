@@ -1,5 +1,3 @@
-// UserServices.jsx
-
 const BASE_URL = 'http://localhost:3001/users';
 
 /**
@@ -19,7 +17,13 @@ export async function GetUsers() {
             throw new Error('Error fetching users');
         }
 
-        return await response.json();
+        const users = await response.json();
+        
+        // Asegurarse de que cada usuario tenga un campo 'role'
+        return users.map(user => ({
+            ...user,
+            role: user.role || 'user', // Default role if not provided
+        }));
     } catch (error) {
         console.error('Error fetching users:', error);
         throw error;
@@ -28,15 +32,14 @@ export async function GetUsers() {
 
 /**
  * Create a new user
- * @param {string} username - Username of the new user
  * @param {string} email - Email of the new user
  * @param {string} psw - Password of the new user
- * @param {string} cedula - Identification number of the new user
+ * @param {string} role - Role of the new user (default: 'user')
  * @returns {Promise<Object>} - Created user
  */
-export async function PostUser(username, email, psw, cedula) {
+export async function PostUser(email, psw, role = 'user') {
     try {
-        const userData = { username, email, psw, cedula };
+        const userData = { email, psw, role }; // Añadimos el campo 'role'
 
         const response = await fetch(BASE_URL, {
             method: 'POST',

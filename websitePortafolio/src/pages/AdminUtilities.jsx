@@ -18,6 +18,7 @@ function AdminUtilities() {
         <div className='taskbox'><ConsultHistory /></div>
       </div>
       <ToolRegForm />
+      <br /><br />
       <Footer />
     </div>
   );

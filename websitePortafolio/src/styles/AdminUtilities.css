@@ -1,6 +1,6 @@
 .taskbox-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-template-columns: 40% 1fr; /* Primera columna 40%, segunda columna el resto */
     gap: 20px; /* Espacio entre las columnas */
     margin-bottom: 20px; /* Espacio entre el contenedor y ToolRegForm */
 }

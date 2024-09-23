@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import  ServiciosCard from '../components/ServiciosCard'
 import Whitebox from '../components/Whitebox'
 import ServicesBanner from '../components/ServicesBanner';
+import ContactFormMail from '../components/ContactFormMail';
 
 function Services () {
 
@@ -17,6 +18,7 @@ function Services () {
       <ServiciosCard />
       </div>
       <br />
+      <ContactFormMail  />
       <br />
       <Footer />
     </>
