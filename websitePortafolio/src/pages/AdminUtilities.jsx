@@ -29,6 +29,11 @@ function AdminUtilities() {
       </div>
       <ToolRegForm />
       <br /><br />
+
+      <Link to="/AdminShop">Admin Shop</Link>
+      <Link to="/AdminUtilities">AdminTool</Link>
+      
+
       <Footer />
     </div>
   );

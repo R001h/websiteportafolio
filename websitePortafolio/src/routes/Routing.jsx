@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
-import XXAUTH1ogin from '../pages/XXAUTH1ogin';
+import Login from '../pages/Login';
 import Contact from '../pages/Contact';
 import Services from '../pages/Services';
 import AboutUs from '../pages/AboutUs';
@@ -17,7 +17,7 @@ const Routing = () => {
     <Router>
      <Routes>
        <Route path="/" element={<Home />} />
-       <Route path="/XXAUTH1ogin" element={<XXAUTH1ogin />} />
+       <Route path="/Login" element={<Login />} />
        <Route path="/Contact" element={<Contact />} />
        <Route path="/Services" element={<Services />} />
        <Route path="/AboutUs" element={<AboutUs />} />
