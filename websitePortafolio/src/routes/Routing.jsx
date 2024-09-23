@@ -9,6 +9,7 @@ import AboutUs from '../pages/AboutUs';
 import AdminUtilities from '../pages/AdminUtilities';
 import AdminShop from '../pages/AdminShop';
 import Shop from '../pages/Shop';
+import ProtectedRoute from'../ProtectedRoute'
 
 
 const Routing = () => {
@@ -21,8 +22,8 @@ const Routing = () => {
        <Route path="/Services" element={<Services />} />
        <Route path="/AboutUs" element={<AboutUs />} />
        <Route path="/Shop" element={<Shop />} />
-       <Route path="/AdminUtilities" element={<AdminUtilities />} />
-       <Route path="/AdminShop" element={<AdminShop />} />
+       <Route path="/AdminUtilities" element={<ProtectedRoute><AdminUtilities /></ProtectedRoute>} />
+       <Route path="/AdminShop" element={<ProtectedRoute><AdminShop /></ProtectedRoute>} />
      </Routes>
     </Router>
    );

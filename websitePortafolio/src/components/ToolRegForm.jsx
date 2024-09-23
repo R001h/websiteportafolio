@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/RegisterForm.css';
 import { GetUsers, PostUser } from '../services/UserServices';
-import { useNavigate } from 'react-router-dom';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css'; // Importar estilos de iziToast
 
-function RegisterForm(props) {
+function RegisterForm() {
   const [email, setEmail] = useState('');
   const [psw, setPsw] = useState('');
   const [users, setUsers] = useState([]);
-
-  const navigate = useNavigate(); // Usar botón de redirección
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -47,6 +44,10 @@ function RegisterForm(props) {
         message: 'Registro exitoso.',
         position: 'topRight',
       });
+
+      // Limpiar el formulario
+      setEmail('');
+      setPsw('');
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
       iziToast.error({
@@ -59,6 +60,7 @@ function RegisterForm(props) {
 
   return (
     <div className='LoginBox'>
+      <h2>Crear Usuarios nuevos</h2>
       <form onSubmit={handleSubmit} className="box_login">
         <br />
         <label htmlFor="email">Email:</label>

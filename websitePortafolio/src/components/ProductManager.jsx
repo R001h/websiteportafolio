@@ -20,25 +20,39 @@ const ProductManager = () => {
 
     const handleAddProduct = async (product) => {
         const newProduct = await PostProduct(product);
-        setProducts([...products, newProduct]);
+        setProducts(prevProducts => [...prevProducts, newProduct]);
     };
 
     const handleEditProduct = async (updatedData) => {
         const updatedProduct = await PutProduct(updatedData.id, updatedData);
-        setProducts(products.map(product => (product.id === updatedData.id ? updatedProduct : product)));
+        setProducts(prevProducts => 
+            prevProducts.map(product => {
+                if (product.id === updatedData.id) {
+                    return updatedProduct;
+                }
+                return product;
+            })
+        );
         setEditingProduct(null);
     };
 
     const handleDeleteProduct = async (id) => {
         await DeleteProduct(id);
-        setProducts(products.filter(product => product.id !== id));
+        setProducts(prevProducts => prevProducts.filter(product => product.id !== id));
     };
+
+    let currentFormHandler;
+    if (editingProduct) {
+        currentFormHandler = handleEditProduct;
+    } else {
+        currentFormHandler = handleAddProduct;
+    }
 
     return (
         <div>
             <br />
             <ProductForm
-                onSubmit={editingProduct ? handleEditProduct : handleAddProduct}
+                onSubmit={currentFormHandler}
                 initialData={editingProduct} 
             />
             <ProductList
@@ -46,11 +60,9 @@ const ProductManager = () => {
                 onEdit={setEditingProduct}
                 onDelete={handleDeleteProduct}
             />
-
             <br />
         </div>
     );
-    
 };
 
 export default ProductManager;

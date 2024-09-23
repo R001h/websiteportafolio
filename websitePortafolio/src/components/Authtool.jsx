@@ -3,37 +3,34 @@ import '../styles/LoginForm.css';
 import { GetUsers } from '../services/UserServices'; 
 import { useNavigate } from 'react-router-dom';
 import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css'; // Importar estilos de iziToast
+import 'izitoast/dist/css/iziToast.min.css'; 
 
 const Authtool = () => {
   const [email, setEmail] = useState('');
   const [psw, setPsw] = useState('');
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     try {
-      // Obtener la lista de usuarios
       const users = await GetUsers();
-      // Buscar al usuario que coincida con el email y contraseña proporcionados
       const user = users.find(u => u.email === email && u.psw === psw);
+      
 
       if (user) {
-        console.log('Inicio de sesión exitoso:', user);
+        localStorage.setItem('Autenticado', 'true')
         iziToast.success({
           title: 'Éxito',
           message: 'Inicio de sesión exitoso.',
           position: 'topRight',
         });
-        
-        // Redirigir según el rol del usuario
-        if (user.role === 'admin') {
-          navigate('/AdminUtilities'); // Redirigir a utilidades de admin
-        } else if (user.role === 'user') {
-          navigate('/AdminShop'); // Redirigir a la tienda de usuarios
-        }
+
+        navigate(user.role === 'admin' ? '/AdminUtilities' : '/AdminShop');
       } else {
         setError('Credenciales inválidas');
         iziToast.warning({
@@ -50,6 +47,8 @@ const Authtool = () => {
         message: 'Hubo un error al intentar iniciar sesión.',
         position: 'topRight',
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -79,9 +78,11 @@ const Authtool = () => {
           onChange={(e) => setPsw(e.target.value)} 
         />
         <br />
-        <button type='submit' id="btnLogin" className="btnLogin">Log In</button>
+        <button type='submit' id="btnLogin" className="btnLogin" disabled={loading}>
+          {loading ? 'Cargando...' : 'Log In'}
+        </button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import GetProduct from '../services/GetProduct'; 
 import '../styles/ProductForm.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const ProductForm = ({ onSubmit, initialData }) => {
     const [formData, setFormData] = useState({
         id: '',
         type: '',
-        operating_systems_supported: '',
         version: '',
-        system_requirements: '',
         model: '',
         language: '',
         image: '',
@@ -21,11 +21,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
         const fetchProduct = async () => {
             try {
                 const productData = await GetProduct();
-                if (initialData) {
-                    setFormData(initialData);
-                } else {
-                    setFormData(productData); // O adapta esto según la estructura de tu respuesta
-                }
+                setFormData(initialData || productData);
             } catch (error) {
                 setError('Error al obtener el producto');
                 console.error('Error al obtener el producto:', error);
@@ -53,7 +49,34 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formData);
+
+        // Simple validation example
+        if (parseFloat(formData.price) <= 0) {
+            iziToast.warning({
+                title: 'Advertencia',
+                message: 'El precio debe ser un número positivo.',
+                position: 'topRight',
+            });
+            return;
+        }
+
+        // Call the onSubmit function and handle any success or error notifications
+        onSubmit(formData)
+            .then(() => {
+                iziToast.success({
+                    title: 'Éxito',
+                    message: 'Producto guardado correctamente.',
+                    position: 'topRight',
+                });
+            })
+            .catch((submitError) => {
+                iziToast.error({
+                    title: 'Error',
+                    message: 'No se pudo guardar el producto.',
+                    position: 'topRight',
+                });
+                console.error('Error al guardar el producto:', submitError);
+            });
     };
 
     if (loading) return <p className="text-center">Cargando...</p>;
@@ -64,9 +87,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
             <h2 className="text-centerInventario">Ingresar Productos al Inventario</h2>
 
             <input className="margin-bottomx" type="text" name="type" placeholder="Tipo" value={formData.type} onChange={handleChange} required />
-            <input className="margin-bottomx" type="text" name="operating_systems_supported" placeholder="Sistemas Operativos" value={formData.operating_systems_supported} onChange={handleChange} required />
             <input className="margin-bottomx" type="text" name="version" placeholder="Versión" value={formData.version} onChange={handleChange} required />
-            <input className="margin-bottomx" type="text" name="system_requirements" placeholder="Requisitos del Sistema" value={formData.system_requirements} onChange={handleChange} />
             <input className="margin-bottomx" type="text" name="model" placeholder="Modelo" value={formData.model} onChange={handleChange} />
             <input className="margin-bottomx" type="text" name="language" placeholder="Idioma" value={formData.language} onChange={handleChange} required />
             <input className="margin-bottomx" type="file" accept="image/*" onChange={handleImageChange} />
